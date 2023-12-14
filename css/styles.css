@@ -1,9 +1,17 @@
 :root {
-  --text-color-light: red;
-  --bg-color-light: #fff;
-  --second-bg-color-light: #e3cece;
-  --main-color-light: #3498db;
-  --other-color-light: #ddd;
+  /*
+  --bg-color-light: 
+  --second-bg-color-light:
+  --text-color-light:
+  --main-color-light:
+  --other-color-light:
+   */
+
+  --bg-color-light: #97ebf4;
+  --second-bg-color-light: #e8f8fd;
+  --text-color-light: #fcf8f8;
+  --main-color-light: #1d6fa6;
+  --other-color-light: #343030;
 
   --text-color-dark: #fff;
   --bg-color-dark: #212a43;
@@ -122,7 +130,7 @@ span {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--other-color);
   transition: 0.4s;
   border-radius: 34px;
 }
@@ -134,13 +142,13 @@ span {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: #fff;
   transition: 0.4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: var(--main-color);
 }
 
 input:checked + .slider:before {
@@ -168,6 +176,7 @@ section {
 }
 
 .main-content h4 {
+  margin-top: 20%;
   font-size: 1.6rem;
 }
 
@@ -356,7 +365,7 @@ header.sticky {
   margin-top: 3.5rem;
 }
 
-.row {
+.project {
   background-color: #2d343f;
   border-radius: 28px;
   border: 1px solid transparent;
@@ -365,11 +374,34 @@ header.sticky {
   transition: all 0.5s ease;
 }
 
-.row img {
+.project img {
   height: auto;
   width: 100%;
   border-radius: 28px;
   margin-bottom: 1.4rem;
+}
+
+.project h3 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.project h4 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: var(--p-font);
+  font-weight: 400;
+  color: var(--other-color);
+  line-height: 27px;
+  margin-bottom: 10px;
+}
+
+.icons-sizing {
 }
 
 .life-demo-link {
@@ -383,23 +415,33 @@ header.sticky {
   transition: all 0.5s ease;
 }
 
-.row a:hover {
+.life-demo-link:hover {
   border-bottom: 2px solid var(--main-color);
-  scale: 1.03;
+  scale: 1.04;
 }
 
-.row i {
+.project-github-link {
+  scale: 1.4;
+  margin-right: 0.5rem;
+  transition: all 0.5s ease;
+}
+
+.project-github-link:hover {
+  scale: 1.7;
+}
+
+.project i {
   vertical-align: middle;
   font-size: 25px;
   color: var(--main-color);
 }
 
-.row-footer {
+.project-footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   align-items: center;
 }
 
-.row-footer div {
+.project-footer div {
   margin: 1rem;
 }
