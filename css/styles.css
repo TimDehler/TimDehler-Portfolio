@@ -360,7 +360,7 @@ header.sticky {
 .projects {
   background: var(--second-bg-color);
   height: fit-content;
-  padding-top: 6%;
+  padding-top: 3%;
 }
 
 .projects-content {
@@ -613,8 +613,7 @@ footer {
   }
 
   .about,
-  .techstack,
-  .projects {
+  .techstack {
     padding-top: 25%;
   }
 
