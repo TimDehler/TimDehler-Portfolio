@@ -2,8 +2,8 @@ const header = document.querySelector("header");
 const toggleSwitch = document.getElementById("toggleSwitch");
 const currentTheme = localStorage.getItem("theme");
 const navbar = document.getElementById("navbar");
-
 const projectSection = document.querySelector(".projects");
+
 let menu = document.querySelector("#menu-icon");
 let navlist = document.querySelector(".navlist");
 let listElements = document.querySelectorAll(".liElement");
@@ -68,6 +68,7 @@ window.addEventListener("scroll", function () {
 
   if (currentScrollPos > prevScrollPos) {
     if (window.scrollY >= projectSection.offsetTop) {
+      console.log("here");
       navbar.style.display = "none";
     }
   } else {

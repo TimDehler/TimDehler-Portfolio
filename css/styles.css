@@ -313,7 +313,7 @@ header.sticky {
 
 .techstack-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   align-items: center;
   gap: 2rem;
   margin-top: 3.5rem;
@@ -452,7 +452,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
 }
 
 .copyright p {
