@@ -313,7 +313,7 @@ header.sticky {
 
 .techstack-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
   align-items: center;
   gap: 2rem;
   margin-top: 3.5rem;
@@ -336,20 +336,23 @@ header.sticky {
   box-shadow: 0 0 5px var(--main-color);
   transition: all 0.5s ease;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .box h3 {
   font-size: 30px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-right: 5%;
 }
 
-.box p {
+/* .box p {
   font-size: var(--p-font);
   font-weight: 400;
   color: var(--other-color);
   line-height: 27px;
-}
+} */
 
 .box:hover {
   border: 1px solid var(--main-color);
@@ -395,7 +398,6 @@ header.sticky {
 .project h4 {
   font-size: 25px;
   font-weight: 600;
-  margin-bottom: 1.1rem;
 }
 
 .project p {
