@@ -1,17 +1,9 @@
 :root {
-  /*
-  --bg-color-light: 
-  --second-bg-color-light:
-  --text-color-light:
-  --main-color-light:
-  --other-color-light:
-   */
-
-  --bg-color-light: #97ebf4;
-  --second-bg-color-light: #e8f8fd;
-  --text-color-light: #fcf8f8;
-  --main-color-light: #1d6fa6;
-  --other-color-light: #343030;
+  --bg-color-light: #5fe3f2;
+  --second-bg-color-light: #c3d8df;
+  --text-color-light: #bcc1c7;
+  --main-color-light: #107cc4;
+  --other-color-light: #000000;
 
   --text-color-dark: #fff;
   --bg-color-dark: #212a43;
@@ -59,6 +51,7 @@ body {
 header {
   position: fixed;
   width: 100%;
+  max-width: 100vw;
   top: 0;
   right: 0;
   z-index: 1000;
@@ -71,7 +64,7 @@ header {
 }
 
 .logo {
-  font-size: 36px;
+  font-size: 2.5vw;
   color: var(--text-color);
   font-weight: 600;
 }
@@ -84,12 +77,20 @@ span {
   display: flex;
 }
 
+.navlist li {
+  text-align: center;
+}
+
 .navlist a {
   font: var(--p-font);
   font-weight: 500;
   color: var(--other-color);
   margin-left: 40px;
   transition: all 0.5s ease;
+}
+
+.navlist.active a {
+  margin-left: 0;
 }
 
 .navlist a:hover {
@@ -167,21 +168,20 @@ section {
 .hero {
   height: 100vh;
   width: 100%;
-  /* background-color: url();
+  /* background-image: url(../assets/favicon/logo.png);
   background-position: top right;
-  background-size: cover;
+  background-size: cover; */
   display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 }
 
 .main-content h4 {
-  margin-top: 20%;
   font-size: 1.6rem;
 }
 
 .main-content h1 {
-  font-size: var(--h1-front);
+  font-size: var(--h1-font);
   font-weight: 900;
   margin: 20px 0px 20px;
   line-height: 1.2;
@@ -191,7 +191,6 @@ section {
   font-size: var(--p-font);
   font-weight: 400;
   width: 620px;
-  max-width: 100%;
   color: var(--other-color);
   line-height: 30px;
   margin-bottom: 15px;
@@ -361,14 +360,15 @@ header.sticky {
 .projects {
   background: var(--second-bg-color);
   height: fit-content;
+  padding-top: 6%;
 }
 
 .projects-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(500px, auto));
   align-items: center;
-  gap: 2rem;
-  margin-top: 3.5rem;
+  gap: 3rem;
+  margin-top: 2.5rem;
 }
 
 .project {
@@ -442,4 +442,200 @@ header.sticky {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+footer {
+  padding: 22px 16%;
+  background: var(--second-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.copyright p {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--other-color);
+}
+
+.scroll-up i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--main-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: var(--text-color);
+  font-size: 27px;
+}
+
+@media (max-width: 1700px) {
+  header {
+    padding: 20px 8%;
+  }
+  header.sticky {
+    padding: 14px 8%;
+  }
+
+  .main-content {
+    padding-top: 10%;
+  }
+
+  section {
+    padding: 90px 8% 80px;
+    min-height: 100vh;
+    height: fit-content;
+  }
+  footer {
+    padding: 18px 8%;
+  }
+  .logo {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1380px) {
+  header {
+    padding: 20px 5%;
+  }
+  header.sticky {
+    padding: 14px 5%;
+  }
+
+  section {
+    padding: 90px 5% 80px;
+  }
+  footer {
+    padding: 18px 5%;
+  }
+  .logo {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1290px) {
+  .box {
+    padding: 40px 40px 46px;
+  }
+
+  .box h3 {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .about-img img {
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    max-width: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  :root {
+    --h1-font: 4rem;
+    --h2-font: 2.2rem;
+    --p-font: 15px;
+  }
+}
+
+@media (max-width: 950px) {
+  :root {
+    --h1-font: 3.5rem;
+  }
+
+  .social {
+    margin-bottom: 20px;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .navlist {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    transition: all 0.5s ease;
+  }
+
+  .navlist a {
+    display: block;
+    padding: 17px;
+    font-size: 22px;
+  }
+  .navlist.active {
+    right: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .main-content p {
+    width: 100%;
+  }
+
+  .projects-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 470px) {
+  :root {
+    --h1-font: 3rem;
+    --h2-font: 2rem;
+  }
+
+  header {
+    padding: 16px 4%;
+  }
+  header.sticky {
+    padding: 12px 4%;
+  }
+
+  .about,
+  .techstack,
+  .projects {
+    padding-top: 25%;
+  }
+
+  .about-img img {
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    max-width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --h1-font: 2.5rem;
+    --h2-font: 1.5rem;
+  }
 }

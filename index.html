@@ -27,16 +27,15 @@
     />
   </head>
   <body>
-    <header>
+    <header id="navbar">
       <a href="#" class="logo"><span>Tim Dehler</span>.dev</a>
       <div class="bx bx-menu" id="menu-icon"></div>
 
       <ul class="navlist">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#techstack">Tech Stack</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li class="liElement"><a href="#home">Home</a></li>
+        <li class="liElement"><a href="#about">About me</a></li>
+        <li class="liElement"><a href="#techstack">Tech Stack</a></li>
+        <li class="liElement"><a href="#projects">Projects</a></li>
       </ul>
 
       <div class="toggle-container">
@@ -83,7 +82,7 @@
 
       <section class="about" id="about">
         <div class="about-img">
-          <!-- <img src="assets/whatever"> -->
+          <img src="./assets/favicon/logo.png" />
         </div>
 
         <div class="about-text">
@@ -412,16 +411,15 @@
           </div>
         </div>
       </section>
-
-      <section>
-        <div id="contact">Contact</div>
-      </section>
     </main>
 
-    <footer class="footer">
+    <footer>
       <div class="copyright">
         <p>2023 Tim Dehler, All rights reserved</p>
       </div>
+      <a href="#home" class="scroll-up">
+        <i class="ri-arrow-up-s-fill"></i>
+      </a>
     </footer>
 
     <script src="./js/script.js"></script>

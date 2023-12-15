@@ -1,4 +1,12 @@
 const header = document.querySelector("header");
+const toggleSwitch = document.getElementById("toggleSwitch");
+const currentTheme = localStorage.getItem("theme");
+const navbar = document.getElementById("navbar");
+
+const projectSection = document.querySelector(".projects");
+let menu = document.querySelector("#menu-icon");
+let navlist = document.querySelector(".navlist");
+let listElements = document.querySelectorAll(".liElement");
 
 window.addEventListener("load", () => {
   document.documentElement.setAttribute("data-theme", "dark");
@@ -9,9 +17,6 @@ window.addEventListener("load", () => {
 window.addEventListener("scroll", () => {
   header.classList.toggle("sticky", window.scrollY > 120);
 });
-
-const toggleSwitch = document.getElementById("toggleSwitch");
-const currentTheme = localStorage.getItem("theme");
 
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
@@ -31,7 +36,6 @@ function updateThemeVariables(theme) {
     "--bg-color",
     `var(--bg-color-${theme})`
   );
-  // Update other variables as needed
 }
 
 function switchTheme(e) {
@@ -43,3 +47,32 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener("change", switchTheme);
+
+const toggleNavbar = () => {
+  menu.classList.toggle("bx-x");
+  navlist.classList.toggle("active");
+};
+
+menu.onclick = () => toggleNavbar();
+
+listElements.forEach((element) => {
+  element.addEventListener("click", function () {
+    if (menu.classList.value.includes("bx-x")) toggleNavbar();
+  });
+});
+
+let prevScrollPos = window.pageYOffset;
+
+window.addEventListener("scroll", function () {
+  const currentScrollPos = window.pageYOffset;
+
+  if (currentScrollPos > prevScrollPos) {
+    if (window.scrollY >= projectSection.offsetTop) {
+      navbar.style.display = "none";
+    }
+  } else {
+    navbar.style.display = "flex";
+  }
+
+  prevScrollPos = currentScrollPos;
+});
