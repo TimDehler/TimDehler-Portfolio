@@ -3,6 +3,7 @@ const toggleSwitch = document.getElementById("toggleSwitch");
 const currentTheme = localStorage.getItem("theme");
 const navbar = document.getElementById("navbar");
 const projectSection = document.querySelector(".projects");
+const errorField = document.getElementById("email-validation-error");
 
 let menu = document.querySelector("#menu-icon");
 let navlist = document.querySelector(".navlist");
@@ -61,19 +62,70 @@ listElements.forEach((element) => {
   });
 });
 
-let prevScrollPos = window.pageYOffset;
+const toggleError = (event) => {
+  if (!errorField.classList.contains("hidden")) {
+    errorField.classList.toggle("hidden");
+  }
+};
 
-window.addEventListener("scroll", function () {
-  const currentScrollPos = window.pageYOffset;
+const sendMail = (event) => {
+  event.preventDefault();
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  if (currentScrollPos > prevScrollPos) {
-    if (window.scrollY >= projectSection.offsetTop) {
-      console.log("here");
-      navbar.style.display = "none";
+  const senderEmail = document.getElementById("email-sender").value;
+  const emailMessage = document.getElementById("email-body").value;
+
+  const button = document.getElementById("submit-btn");
+
+  const loader = `<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+  const successMessage = `<h1>Email Send ✔️</h1>`;
+
+  if (senderEmail === "") {
+    if (errorField.classList.contains("hidden")) {
+      errorField.classList.toggle("hidden");
     }
-  } else {
-    navbar.style.display = "flex";
+    errorField.innerText = "Seems like you forgot to add your Email";
   }
 
-  prevScrollPos = currentScrollPos;
-});
+  if (!emailRegex.test(senderEmail)) {
+    if (errorField.classList.contains("hidden")) {
+      errorField.classList.toggle("hidden");
+    }
+    errorField.innerText = "Seems like you entered an invalid Email";
+  }
+
+  if (emailMessage === "") {
+    if (errorField.classList.contains("hidden")) {
+      errorField.classList.toggle("hidden");
+    }
+    errorField.innerText = "Seems like you forgot to add a Message";
+  }
+
+  button.innerHTML = loader;
+
+  setTimeout(() => {
+    button.innerHTML = successMessage;
+  }, 4500);
+
+  const url = "#";
+
+  const headers = new Headers({
+    "Content-Type": "application/json",
+  });
+
+  const body = {
+    senderEmail,
+    emailMessage,
+  };
+
+  const requestOptions = {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(body),
+  };
+
+  // fetch(url, requestOptions)
+  //   .then((response) => response.json())
+  //   .then((data) => console.log("Response:", data))
+  //   .catch((error) => console.error("Error:", error));
+};

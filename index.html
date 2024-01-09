@@ -36,6 +36,7 @@
         <li class="liElement"><a href="#about">About me</a></li>
         <li class="liElement"><a href="#techstack">Tech Stack</a></li>
         <li class="liElement"><a href="#projects">Projects</a></li>
+        <li class="liElement"><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="toggle-container">
@@ -73,10 +74,10 @@
             <a href="#contact"><i class="ri-mail-fill"></i></a>
           </div>
 
-          <div class="main-btn">
+          <!-- <div class="main-btn">
             <a href="#" class="btn">Hire me</a>
             <a href="#" class="btn btn2">Download CV</a>
-          </div>
+          </div> -->
         </div>
       </section>
 
@@ -88,7 +89,7 @@
         <div class="about-text">
           <h2>
             I am <span>Apprentice</span> <br />
-            & trying to become a<br />
+            & on my way becoming a<br />
             <span>Full Stack Web Developer</span>
           </h2>
           <div class="exp-area">
@@ -103,7 +104,7 @@
             </p>
 
             <p class="exp">
-              Adress:
+              Address:
               <span>Fulda, Germany</span>
             </p>
 
@@ -374,6 +375,35 @@
             </div>
           </div>
         </div>
+      </section>
+      <section id="contact">
+        <div class="center-text">
+          <h2>Contact<span> Me</span></h2>
+        </div>
+
+        <form class="message-input" onsubmit="sendMail(event)">
+          <p
+            class="email-validation-error hidden"
+            id="email-validation-error"
+          ></p>
+          <input
+            oninput="toggleError(event)"
+            id="email-sender"
+            type="text"
+            placeholder="Enter your e-mail here"
+          />
+
+          <textarea
+            oninput="toggleError(event)"
+            class="message"
+            id="email-body"
+            placeholder="Your message to me goes here..."
+          ></textarea>
+
+          <button id="submit-btn" class="btn btn2 submitBtn" type="submit">
+            Send
+          </button>
+        </form>
       </section>
     </main>
 
