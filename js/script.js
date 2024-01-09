@@ -9,45 +9,9 @@ let menu = document.querySelector("#menu-icon");
 let navlist = document.querySelector(".navlist");
 let listElements = document.querySelectorAll(".liElement");
 
-window.addEventListener("load", () => {
-  document.documentElement.setAttribute("data-theme", "dark");
-  localStorage.setItem("theme", "dark");
-  updateThemeVariables("dark");
-});
-
 window.addEventListener("scroll", () => {
   header.classList.toggle("sticky", window.scrollY > 120);
 });
-
-if (currentTheme) {
-  document.documentElement.setAttribute("data-theme", currentTheme);
-  updateThemeVariables(currentTheme);
-
-  if (currentTheme === "dark") {
-    toggleSwitch.checked = true;
-  }
-}
-
-function updateThemeVariables(theme) {
-  document.documentElement.style.setProperty(
-    "--text-color",
-    `var(--text-color-${theme})`
-  );
-  document.documentElement.style.setProperty(
-    "--bg-color",
-    `var(--bg-color-${theme})`
-  );
-}
-
-function switchTheme(e) {
-  const theme = e.target.checked ? "dark" : "light";
-  updateThemeVariables(theme);
-
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
-}
-
-toggleSwitch.addEventListener("change", switchTheme);
 
 const toggleNavbar = () => {
   menu.classList.toggle("bx-x");
@@ -62,7 +26,7 @@ listElements.forEach((element) => {
   });
 });
 
-const toggleError = (event) => {
+const toggleError = () => {
   if (!errorField.classList.contains("hidden")) {
     errorField.classList.toggle("hidden");
   }
@@ -85,6 +49,7 @@ const sendMail = (event) => {
       errorField.classList.toggle("hidden");
     }
     errorField.innerText = "Seems like you forgot to add your Email";
+    return;
   }
 
   if (!emailRegex.test(senderEmail)) {
@@ -92,6 +57,7 @@ const sendMail = (event) => {
       errorField.classList.toggle("hidden");
     }
     errorField.innerText = "Seems like you entered an invalid Email";
+    return;
   }
 
   if (emailMessage === "") {
@@ -99,33 +65,41 @@ const sendMail = (event) => {
       errorField.classList.toggle("hidden");
     }
     errorField.innerText = "Seems like you forgot to add a Message";
+    return;
   }
 
   button.innerHTML = loader;
 
-  setTimeout(() => {
-    button.innerHTML = successMessage;
-  }, 4500);
+  // const url = "http://localhost:5000/mailService";
 
-  const url = "#";
+  // const headers = new Headers({
+  //   "Content-Type": "application/json",
+  // });
 
-  const headers = new Headers({
-    "Content-Type": "application/json",
-  });
+  // const body = {
+  //   senderEmail,
+  //   emailMessage,
+  // };
 
-  const body = {
-    senderEmail,
-    emailMessage,
-  };
-
-  const requestOptions = {
-    method: "POST",
-    headers: headers,
-    body: JSON.stringify(body),
-  };
+  // const requestOptions = {
+  //   method: "POST",
+  //   headers: headers,
+  //   body: JSON.stringify(body),
+  // };
 
   // fetch(url, requestOptions)
-  //   .then((response) => response.json())
-  //   .then((data) => console.log("Response:", data))
-  //   .catch((error) => console.error("Error:", error));
+  //   .then((response) => {
+  //     if (response.status === 200) {
+  //       button.innerHTML = successMessage;
+  //     } else {
+  //       throw new Error();
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     button.innerHTML = "<h1>Error Sending Mail❌</h1>";
+  //   });
+
+  setTimeout(() => {
+    button.innerHTML = successMessage;
+  }, 2500);
 };
