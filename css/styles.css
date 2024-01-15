@@ -261,6 +261,7 @@ header.sticky {
   align-items: center;
   gap: 2rem;
   margin-top: 3.5rem;
+  transition: all 0.8s ease;
 }
 
 .icon-container {
@@ -273,16 +274,29 @@ header.sticky {
 }
 
 .box {
-  padding: 25px 30px 25px 30px;
+  padding: 1rem 1.2rem;
   background: #2d343f;
   border-radius: 28px;
   border: 1px solid transparent;
   box-shadow: 0 0 5px var(--main-color);
-  transition: all 0.5s ease;
+  transition: max-height 0.9s ease;
   cursor: pointer;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 25vw;
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.box p {
+  margin-top: 0.4rem;
+}
+
+.box:hover {
+  max-height: 200px;
+  border: 1px solid var(--main-color);
 }
 
 .box h3 {
@@ -291,28 +305,12 @@ header.sticky {
   margin-right: 5%;
 }
 
-/* .box p {
-  font-size: var(--p-font);
-  font-weight: 400;
-  color: var(--second-color);
-  line-height: 27px;
-} */
-
-.box:hover {
-  border: 1px solid var(--main-color);
-  transform: translateY(-5px) scale(1.05);
-}
-
 .projects {
   background: var(--second-bg-color);
   height: fit-content;
 }
 
 .projects-content {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, auto));
-  align-items: center;
-  gap: 3rem;*/
   margin-top: 2.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -530,10 +528,6 @@ textarea {
 }
 
 @media (max-width: 1290px) {
-  .box {
-    padding: 40px 40px 46px;
-  }
-
   .box h3 {
     font-size: 21px;
   }
