@@ -45,14 +45,26 @@ header {
   transition: all 0.5s ease;
 }
 
-.logo {
-  font-size: 2.5vw;
-  color: var(--text-color);
-  font-weight: 600;
+header.sticky {
+  background-color: var(--bg-color);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 16px 16%;
+}
+
+section {
+  padding: 180px 16% 90px;
+  height: 100vh;
+  scroll-snap-align: start;
 }
 
 span {
   color: var(--main-color);
+}
+
+.logo {
+  font-size: 2.5vw;
+  color: var(--text-color);
+  font-weight: 600;
 }
 
 .navlist {
@@ -99,16 +111,7 @@ span {
   margin: 15px;
 }
 
-main {
-}
-
-section {
-  padding: 180px 16% 90px;
-  height: 100vh;
-  scroll-snap-align: start;
-}
-
-.hero {
+.home {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -137,7 +140,7 @@ section {
 }
 
 .social {
-  margin-bottom: 40px;
+  margin-top: 1rem;
 }
 
 .social i {
@@ -164,7 +167,7 @@ section {
   transform: scale(1.7);
 }
 
-.btn {
+.btn-main {
   display: inline-block;
   padding: 11px 26px;
   background: var(--main-color);
@@ -176,13 +179,13 @@ section {
   transition: all 0.5s ease;
 }
 
-.btn:hover {
+.btn-main:hover {
   background-color: transparent;
   color: var(--main-color);
   box-shadow: 0 0 20px var(--main-color);
 }
 
-.btn2 {
+.btn-secondary {
   background-color: transparent;
   color: var(--main-color);
   border: 2px solid var(--main-color);
@@ -190,15 +193,9 @@ section {
   transition: all 0.5s ease;
 }
 
-.btn2:hover {
+.btn-secondary:hover {
   background-color: var(--main-color);
   color: var(--bg-color);
-}
-
-header.sticky {
-  background-color: var(--bg-color);
-  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
-  padding: 16px 16%;
 }
 
 .about {
@@ -209,7 +206,7 @@ header.sticky {
   gap: 1rem;
 }
 
-.about-img img {
+.about-img-container img {
   width: 100%;
   height: 530px;
   max-width: 530px;
@@ -251,8 +248,9 @@ header.sticky {
   font-size: var(--h2-font);
 }
 
-.techstack {
-  padding-top: 6%;
+.techstack,
+.projects {
+  padding-top: 8%;
 }
 
 .techstack-content {
@@ -262,10 +260,6 @@ header.sticky {
   gap: 2rem;
   margin-top: 3.5rem;
   transition: all 0.8s ease;
-}
-
-.icon-container {
-  text-align: center;
 }
 
 .project .icon-container img {
@@ -291,7 +285,7 @@ header.sticky {
 }
 
 .box p {
-  margin-top: 0.4rem;
+  margin-top: 0.8rem;
 }
 
 .box:hover {
@@ -310,6 +304,11 @@ header.sticky {
   height: fit-content;
 }
 
+.subtext {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
 .projects-content {
   margin-top: 2.5rem;
   display: flex;
@@ -326,6 +325,7 @@ header.sticky {
   padding: 20px;
   max-width: 600px;
   margin: 0.8rem;
+  height: 65vh;
 }
 
 .project img {
@@ -334,6 +334,10 @@ header.sticky {
   border-radius: 28px;
   margin-bottom: 1.4rem;
   transition: all 0.5s ease;
+}
+
+.project img:hover {
+  transform: scale(1.03);
 }
 
 .project h3 {
@@ -353,6 +357,20 @@ header.sticky {
   color: var(--second-color);
   line-height: 27px;
   margin-bottom: 10px;
+}
+
+.project-sub-link {
+  text-decoration: underline;
+  color: var(--second-color);
+  font-weight: 400;
+}
+
+.project-sub-link span {
+  transition: all 0.4s ease;
+}
+
+.project-sub-link span:hover {
+  text-shadow: 2px 2px 10px var(--main-color), -1px 1px 10px var(--text-color);
 }
 
 .project-footer a {
@@ -396,6 +414,7 @@ header.sticky {
   font-weight: 700;
   color: var(--text-color);
   transition: all 0.5s ease;
+  margin-top: 0.8rem;
 }
 
 footer {
@@ -506,6 +525,19 @@ textarea {
   .logo {
     font-size: 28px;
   }
+
+  .project {
+    height: fit-content;
+  }
+
+  .box {
+    max-width: 100%;
+  }
+
+  .box:hover {
+    max-height: 240px;
+    border: 1px solid var(--main-color);
+  }
 }
 
 @media (max-width: 1380px) {
@@ -539,7 +571,7 @@ textarea {
     gap: 2rem;
     text-align: center;
   }
-  .about-img img {
+  .about-img-container img {
     text-align: center;
     width: 100%;
     height: 400px;
@@ -642,7 +674,7 @@ textarea {
     padding-top: 25%;
   }
 
-  .about-img img {
+  .about-img-container img {
     text-align: center;
     width: 100%;
     height: 300px;
@@ -655,6 +687,10 @@ textarea {
   .message-input input,
   .message-input button {
     font-size: 0.9rem;
+  }
+
+  .project-footer h4 {
+    font-size: 12px;
   }
 }
 

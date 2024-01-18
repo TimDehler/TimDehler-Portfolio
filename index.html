@@ -27,7 +27,7 @@
   </head>
   <body>
     <header id="navbar">
-      <a href="#" class="logo"><span>Tim Dehler</span>.dev</a>
+      <a href="#about" class="logo"><span>Tim Dehler</span>.dev</a>
       <div class="bx bx-menu" id="menu-icon"></div>
 
       <ul class="navlist">
@@ -40,7 +40,7 @@
     </header>
 
     <main>
-      <section class="hero" id="home">
+      <section class="home" id="home">
         <div class="main-content">
           <h4>Hi there</h4>
           <h1>I'm <span>Tim Dehler</span> 🌐</h1>
@@ -70,7 +70,7 @@
       </section>
 
       <section class="about" id="about">
-        <div class="about-img">
+        <div class="about-img-container">
           <img src="./assets/favicon/logo.png" />
         </div>
 
@@ -286,33 +286,35 @@
       <section class="projects" id="projects">
         <div class="center-text">
           <h2>My <span>Projects</span></h2>
+          <p class="subtext">More coming soon...</p>
         </div>
 
         <div class="projects-content">
-          <!--1. Project-->
-          <div class="project">
-            <img
-              src="./assets/projects/age-calculator/age-calculator-preview.png"
-            />
-            <div class="main-project">
-              <div class="project-heading">
-                <h3>Project Name</h3>
-              </div>
-              <div class="project-description">
+          <div class="project" id="timdehler-agecalculator-project">
+            <a href="https://timdehler.github.io/Age-Calculator/">
+              <img
+                src="./assets/projects/age-calculator/age-calculator-preview.png"
+              />
+            </a>
+            <div>
+              <h3 class="center-text">Age Calculator</h3>
+              <div>
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum.
+                  This project was built within a few hours during a coding
+                  Project in school. You can find the exact challenge at
+                  <a
+                    class="project-sub-link"
+                    target="_blank"
+                    href="https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q"
+                    ><span>Frontendmentor Challenge</span></a
+                  >. It is built for Desktop as well as mobile devices according
+                  to the design provided by
+                  <a
+                    class="project-sub-link"
+                    href="https://www.frontendmentor.io/home"
+                    ><span>Frontendmentor.io</span></a
+                  >. It uses plain HTML/CSS/JS.
                 </p>
-              </div>
-              <div class="project-techs">
-                <h4>Built with</h4>
-                <div class="icon-container">
-                  <a href="https://skillicons.dev">
-                    <img src="https://skillicons.dev/icons?i=html,css,js" />
-                  </a>
-                </div>
               </div>
               <div class="project-footer">
                 <a
@@ -329,6 +331,43 @@
                   target="_blank"
                 >
                   <h4>Go to Live Demo <i class="ri-external-link-fill"></i></h4>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project" id="timdehler-portfolio-project">
+            <a
+              target="_blank"
+              href=" https://timdehler.github.io/TimDehler-Portfolio/"
+            >
+              <img
+                src="./assets/projects/portfolio/timdehler-portfolio-preview.png"
+              />
+            </a>
+            <div>
+              <h3 class="center-text">My Portfolio Page</h3>
+              <div>
+                <p>
+                  Most likely you already found this project because you are in
+                  it right now. From here on you can check out the repository
+                  for this page. Technologies used are plain HTML/CSS/JS. If you
+                  have any ideas for improving my page, be please let me know
+                  via
+                  <a class="project-sub-link" href="#contact"
+                    ><span>Contact</span></a
+                  >.
+                </p>
+              </div>
+              <div class="project-footer">
+                <a
+                  href="https://github.com/TimDehler/TimDehler-Portfolio"
+                  target="_blank"
+                >
+                  <div class="flex-container">
+                    <i class="ri-github-fill"></i>
+                    <h4>Project Repo</h4>
+                  </div>
                 </a>
               </div>
             </div>
@@ -359,7 +398,11 @@
             placeholder="Your message to me goes here..."
           ></textarea>
 
-          <button id="submit-btn" class="btn btn2 submitBtn" type="submit">
+          <button
+            id="submit-btn"
+            class="btn-main btn-secondary submitBtn"
+            type="submit"
+          >
             Send
           </button>
         </form>
