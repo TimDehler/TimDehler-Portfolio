@@ -692,6 +692,10 @@ textarea {
   .project-footer h4 {
     font-size: 12px;
   }
+
+  .main-content h1 {
+    font-size: 38px;
+  }
 }
 
 @media (max-width: 400px) {
