@@ -301,12 +301,6 @@ span {
 
 .projects {
   background: var(--second-bg-color);
-  height: fit-content;
-}
-
-.subtext {
-  margin-top: 0.5rem;
-  font-weight: bold;
 }
 
 .projects-content {
@@ -325,7 +319,6 @@ span {
   padding: 20px;
   max-width: 600px;
   margin: 0.8rem;
-  height: fit-content;
 }
 
 .project img {
