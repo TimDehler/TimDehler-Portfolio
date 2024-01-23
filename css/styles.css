@@ -177,6 +177,7 @@ span {
   font-size: 15px;
   font-weight: 600;
   transition: all 0.5s ease;
+  z-index: 100000;
 }
 
 .btn-main:hover {
@@ -247,6 +248,9 @@ span {
 .center-text h2 {
   font-size: var(--h2-font);
 }
+.techstack {
+  background-color: var(--second-bg-color);
+}
 
 .techstack-content {
   display: grid;
@@ -287,10 +291,6 @@ span {
   font-size: 30px;
   font-weight: 700;
   margin-right: 5%;
-}
-
-.projects {
-  background: var(--second-bg-color);
 }
 
 .projects-content {
@@ -402,7 +402,6 @@ span {
 
 footer {
   padding: 22px 16%;
-  background: var(--second-bg-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -487,10 +486,64 @@ textarea {
 
 section.contact-me {
   height: 90vh;
+  background-color: var(--second-bg-color);
 }
 
 footer {
   height: 10vh;
+}
+
+.height-container {
+  height: 70vh;
+}
+
+.slider-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  max-width: min-content;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: var(--second-bg-color);
+  border-radius: 25px;
+  color: #fff;
+  transition: ease 0.5s all;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide h1 {
+  font-size: 1.7em;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.slide p {
+  text-align: start;
+  margin-bottom: 0.5rem;
+}
+
+.slide ul {
+  line-height: 1.8rem;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 1700px) {
@@ -630,6 +683,13 @@ footer {
 
   section.contact-me {
     min-height: 90vh;
+  }
+}
+
+/* Special query to hide the experiences section because of no responsive deisign yet */
+@media (max-width: 850px) {
+  .experiences {
+    display: none;
   }
 }
 
