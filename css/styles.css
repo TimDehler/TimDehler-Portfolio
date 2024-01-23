@@ -490,6 +490,14 @@ textarea {
   display: none;
 }
 
+section.contact-me {
+  height: 90vh;
+}
+
+footer {
+  height: 10vh;
+}
+
 @media (max-width: 1700px) {
   header {
     padding: 20px 8%;
@@ -506,6 +514,10 @@ textarea {
     padding: 90px 8% 80px;
     min-height: 100vh;
     height: fit-content;
+  }
+
+  section.contact-me {
+    min-height: 90vh;
   }
 
   footer {
@@ -540,6 +552,11 @@ textarea {
   section {
     padding: 90px 5% 80px;
   }
+
+  section.contact-me {
+    min-height: 90vh;
+  }
+
   footer {
     padding: 18px 5%;
   }
@@ -573,6 +590,10 @@ textarea {
     --h1-font: 4rem;
     --h2-font: 2.2rem;
     --p-font: 15px;
+  }
+
+  section.contact-me {
+    min-height: 90vh;
   }
 }
 
@@ -611,6 +632,10 @@ textarea {
   .navlist.active {
     right: 0;
   }
+
+  section.contact-me {
+    min-height: 90vh;
+  }
 }
 
 @media (max-width: 680px) {
@@ -641,6 +666,10 @@ textarea {
 
   .project-footer h4 {
     font-size: 18px;
+  }
+
+  section.contact-me {
+    min-height: 90vh;
   }
 }
 
@@ -682,6 +711,10 @@ textarea {
 
   .main-content h1 {
     font-size: 38px;
+  }
+
+  section.contact-me {
+    min-height: 90vh;
   }
 }
 
