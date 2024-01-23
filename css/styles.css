@@ -687,10 +687,18 @@ footer {
   }
 }
 
-/* Special query to hide the experiences section because of no responsive deisign yet */
-@media (max-width: 850px) {
-  .experiences {
-    display: none;
+@media (max-width: 1000px) {
+  .height-container {
+    height: 80vh;
+  }
+
+  .slider {
+    width: 50%;
+  }
+
+  .slide {
+    max-height: 50vh;
+    height: fit-content;
   }
 }
 
@@ -771,6 +779,24 @@ footer {
 
   section.contact-me {
     min-height: 90vh;
+  }
+
+  .experiences button {
+    display: none;
+  }
+
+  .height-container {
+    height: 80vh;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .slide {
+    max-height: 90vh;
+    height: fit-content;
+    font-size: small;
   }
 }
 
