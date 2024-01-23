@@ -524,6 +524,7 @@ footer {
   transition: ease 0.5s all;
   opacity: 0;
   visibility: hidden;
+  border: 1px solid var(--main-color);
 }
 
 .slide h1 {
