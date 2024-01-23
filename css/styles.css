@@ -208,10 +208,10 @@ span {
 
 .about-img-container img {
   width: 100%;
-  height: 530px;
+  height: 600px;
   max-width: 530px;
-  border-radius: 50%;
   object-fit: cover;
+  border-radius: 50%;
   border: 7px solid var(--main-color);
   box-shadow: 0 0 20px var(--main-color);
 }
@@ -288,10 +288,10 @@ span {
   margin-top: 0.8rem;
 }
 
-.box:hover {
+/* .box:hover {
   max-height: 200px;
   border: 1px solid var(--main-color);
-}
+} */
 
 .box h3 {
   font-size: 30px;
@@ -565,10 +565,9 @@ textarea {
     text-align: center;
   }
   .about-img-container img {
-    text-align: center;
     width: 100%;
     height: 400px;
-    max-width: 400px;
+    max-width: 350px;
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto;
@@ -668,10 +667,9 @@ textarea {
   }
 
   .about-img-container img {
-    text-align: center;
     width: 100%;
-    height: 300px;
-    max-width: 300px;
+    height: 250px;
+    max-width: 200px;
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto;
