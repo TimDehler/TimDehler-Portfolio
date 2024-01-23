@@ -283,11 +283,6 @@ span {
   margin-top: 0.8rem;
 }
 
-/* .box:hover {
-  max-height: 200px;
-  border: 1px solid var(--main-color);
-} */
-
 .box h3 {
   font-size: 30px;
   font-weight: 700;
@@ -299,7 +294,7 @@ span {
 }
 
 .projects-content {
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -319,7 +314,7 @@ span {
 .project img {
   height: auto;
   width: 100%;
-  border-radius: 28px;
+  border-radius: 8px;
   margin-bottom: 1.4rem;
   transition: all 0.5s ease;
 }
@@ -648,7 +643,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     align-items: center;
     gap: 1.5rem;
-    margin-top: 2.5rem;
+    margin-top: 1rem;
   }
 
   .message-input input,
