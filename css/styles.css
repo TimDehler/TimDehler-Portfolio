@@ -248,11 +248,6 @@ span {
   font-size: var(--h2-font);
 }
 
-.techstack,
-.projects {
-  padding-top: 8%;
-}
-
 .techstack-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
@@ -504,7 +499,7 @@ textarea {
   }
 
   .main-content {
-    padding-top: 10%;
+    padding-top: 20%;
   }
 
   section {
@@ -512,6 +507,7 @@ textarea {
     min-height: 100vh;
     height: fit-content;
   }
+
   footer {
     padding: 18px 8%;
   }
