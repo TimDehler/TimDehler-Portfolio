@@ -127,7 +127,6 @@ span {
   font-size: var(--h1-font);
   font-weight: 900;
   margin: 20px 0px 20px;
-  line-height: 1.2;
 }
 
 .main-content p {
@@ -526,6 +525,7 @@ footer {
   visibility: hidden;
   border: 1px solid var(--main-color);
   font-size: 1.3em;
+  line-height: 2.5rem;
 }
 
 .slide h1 {
@@ -537,10 +537,6 @@ footer {
 .slide p {
   text-align: start;
   margin-bottom: 0.5rem;
-}
-
-.slide ul {
-  line-height: 1.8rem;
 }
 
 .slide.active {
@@ -704,18 +700,14 @@ footer {
   }
 }
 
-@media (max-width: 830px) {
+@media (max-width: 1140px) {
   .slider {
-    width: 100%;
+    width: 70%;
   }
 
   .slide {
     max-height: 90vh;
     height: fit-content;
-  }
-
-  .experiences button {
-    display: none;
   }
 }
 
@@ -751,6 +743,18 @@ footer {
 
   section.contact-me {
     min-height: 90vh;
+  }
+
+  .slide {
+    line-height: 1.8rem;
+  }
+
+  .experiences button {
+    display: none;
+  }
+
+  .slider {
+    width: 100%;
   }
 }
 
@@ -803,6 +807,12 @@ footer {
   :root {
     --h1-font: 2.5rem;
     --h2-font: 1.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .slide {
+    font-size: small;
   }
 }
 
