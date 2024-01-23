@@ -525,6 +525,7 @@ footer {
   opacity: 0;
   visibility: hidden;
   border: 1px solid var(--main-color);
+  font-size: 1.3em;
 }
 
 .slide h1 {
@@ -687,7 +688,7 @@ footer {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .height-container {
     height: 80vh;
   }
@@ -699,6 +700,7 @@ footer {
   .slide {
     max-height: 50vh;
     height: fit-content;
+    font-size: 1em;
   }
 }
 
@@ -796,7 +798,6 @@ footer {
   .slide {
     max-height: 90vh;
     height: fit-content;
-    font-size: small;
   }
 }
 
