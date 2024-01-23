@@ -704,6 +704,21 @@ footer {
   }
 }
 
+@media (max-width: 830px) {
+  .slider {
+    width: 100%;
+  }
+
+  .slide {
+    max-height: 90vh;
+    height: fit-content;
+  }
+
+  .experiences button {
+    display: none;
+  }
+}
+
 @media (max-width: 680px) {
   .main-content p {
     width: 100%;
@@ -781,23 +796,6 @@ footer {
 
   section.contact-me {
     min-height: 90vh;
-  }
-
-  .experiences button {
-    display: none;
-  }
-
-  .height-container {
-    height: 80vh;
-  }
-
-  .slider {
-    width: 100%;
-  }
-
-  .slide {
-    max-height: 90vh;
-    height: fit-content;
   }
 }
 
