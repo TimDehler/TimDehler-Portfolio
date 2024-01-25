@@ -97,7 +97,26 @@ const sendMail = (event) => {
 
   setTimeout(() => {
     button.innerHTML = successMessage;
+  }, 2000);
+
+  setTimeout(async () => {
+    await countDown(5);
   }, 2500);
+};
+
+const countDown = async (time) => {
+  setTimeout(() => {
+    document.getElementById("submit-btn").innerText = `Reset in ${time}`;
+
+    if (time === 0) {
+      document.getElementById("submit-btn").innerText = "Send";
+      document.getElementById("email-body").value = "";
+      document.getElementById("email-sender").value = "";
+      return;
+    } else {
+      countDown(time - 1);
+    }
+  }, 1050);
 };
 
 let currentSlide = 0;
