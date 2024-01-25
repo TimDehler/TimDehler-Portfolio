@@ -66,38 +66,41 @@ const sendMail = (event) => {
 
   button.innerHTML = loader;
 
-  // const url = "http://localhost:5000/mailService";
+  const testUrl = "http://localhost:5000/mailService";
+  const url = "http://161.35.28.184:5000/mailService";
 
-  // const headers = new Headers({
-  //   "Content-Type": "application/json",
-  // });
+  const headers = new Headers({
+    "Content-Type": "application/json",
+  });
 
-  // const body = {
-  //   senderEmail,
-  //   emailMessage,
-  // };
+  const body = {
+    senderEmail,
+    emailMessage,
+  };
 
-  // const requestOptions = {
-  //   method: "POST",
-  //   headers: headers,
-  //   body: JSON.stringify(body),
-  // };
+  const requestOptions = {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(body),
+  };
 
-  // fetch(url, requestOptions)
-  //   .then((response) => {
-  //     if (response.status === 200) {
-  //       button.innerHTML = successMessage;
-  //     } else {
-  //       throw new Error();
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     button.innerHTML = "<h1>Error Sending Mail❌</h1>";
-  //   });
+  fetch(url, requestOptions)
+    .then((response) => {
+      if (response.status === 200) {
+        button.innerHTML = successMessage;
+      } else {
+        console.log(response);
+        throw new Error();
+      }
+    })
+    .catch((error) => {
+      button.innerHTML = "<h1>Error Sending Mail❌</h1>";
+      console.log(error);
+    });
 
-  setTimeout(() => {
-    button.innerHTML = successMessage;
-  }, 2000);
+  // setTimeout(() => {
+  //   button.innerHTML = successMessage;
+  // }, 2000);
 
   setTimeout(async () => {
     await countDown(5);
