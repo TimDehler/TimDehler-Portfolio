@@ -1,5 +1,4 @@
 const header = document.querySelector("header");
-const errorField = document.getElementById("email-validation-error");
 
 let menu = document.querySelector("#menu-icon");
 let navlist = document.querySelector(".navlist");
@@ -21,104 +20,6 @@ listElements.forEach((element) => {
     if (menu.classList.value.includes("bx-x")) toggleNavbar();
   });
 });
-
-const toggleError = () => {
-  if (!errorField.classList.contains("hidden")) {
-    errorField.classList.toggle("hidden");
-  }
-};
-
-const sendMail = (event) => {
-  event.preventDefault();
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-  const senderEmail = document.getElementById("email-sender").value;
-  const emailMessage = document.getElementById("email-body").value;
-
-  const button = document.getElementById("submit-btn");
-
-  const loader = `<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
-  const successMessage = `<h1>Email Send ✔️</h1>`;
-
-  if (senderEmail === "") {
-    if (errorField.classList.contains("hidden")) {
-      errorField.classList.toggle("hidden");
-    }
-    errorField.innerText = "Seems like you forgot to add your Email";
-    return;
-  }
-
-  if (!emailRegex.test(senderEmail)) {
-    if (errorField.classList.contains("hidden")) {
-      errorField.classList.toggle("hidden");
-    }
-    errorField.innerText = "Seems like you entered an invalid Email";
-    return;
-  }
-
-  if (emailMessage === "") {
-    if (errorField.classList.contains("hidden")) {
-      errorField.classList.toggle("hidden");
-    }
-    errorField.innerText = "Seems like you forgot to add a Message";
-    return;
-  }
-
-  button.innerHTML = loader;
-
-  // const url = "http://161.35.28.184:5000/mailService";
-
-  // const headers = new Headers({
-  //   "Content-Type": "application/json",
-  // });
-
-  // const body = {
-  //   senderEmail,
-  //   emailMessage,
-  // };
-
-  // const requestOptions = {
-  //   method: "POST",
-  //   headers: headers,
-  //   body: JSON.stringify(body),
-  // };
-
-  // fetch(url, requestOptions)
-  //   .then((response) => {
-  //     if (response.status === 200) {
-  //       button.innerHTML = successMessage;
-  //     } else {
-  //       throw new Error();
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     button.innerHTML = "<h1>Error Sending Mail❌</h1>";
-  //     console.log(error);
-  //   });
-
-  setTimeout(() => {
-    button.innerHTML = successMessage;
-  });
-
-  setTimeout(() => {
-    countDown(5);
-  }, 2500);
-};
-
-const countDown = (time) => {
-  setTimeout(() => {
-    document.getElementById("submit-btn").innerText = `Reset in ${time}`;
-
-    if (time === 0) {
-      document.getElementById("submit-btn").innerText = "Send";
-      document.getElementById("email-body").value = "";
-      document.getElementById("email-sender").value = "";
-      return;
-    } else {
-      countDown(time - 1);
-    }
-  }, 1050);
-};
 
 let currentSlide = 0;
 const totalSlides = document.querySelectorAll(".slide").length;
@@ -173,3 +74,13 @@ function handleSwipe() {
     prevSlide();
   }
 }
+
+const copyMail = () => {
+  const email_copy_message_span = document.getElementById("email-copy");
+  email_copy_message_span.classList.toggle("hidden");
+  navigator.clipboard.writeText("tim.dehler@tibidi.de");
+
+  setTimeout(() => {
+    email_copy_message_span.classList.toggle("hidden");
+  }, 2500);
+};
