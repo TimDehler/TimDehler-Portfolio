@@ -251,9 +251,6 @@ span {
 .center-text h2 {
   font-size: var(--h2-font);
 }
-.techstack {
-  background-color: var(--second-bg-color);
-}
 
 .techstack-content {
   display: grid;
@@ -294,6 +291,10 @@ span {
   font-size: 30px;
   font-weight: 700;
   margin-right: 5%;
+}
+
+.projects {
+  background-color: var(--second-bg-color);
 }
 
 .projects-content {
@@ -408,6 +409,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--second-bg-color);
 }
 
 .copyright p {
@@ -487,9 +489,9 @@ textarea {
   display: none;
 }
 
-section.contact-me {
+section.techstack {
   height: 90vh;
-  background-color: var(--second-bg-color);
+  background-color: var(--bg-color);
 }
 
 footer {
@@ -566,7 +568,8 @@ footer {
     height: fit-content;
   }
 
-  section.contact-me {
+  section.techstack {
+    height: 90vh;
     min-height: 90vh;
   }
 
@@ -604,10 +607,6 @@ footer {
     padding: 90px 5% 80px;
   }
 
-  section.contact-me {
-    min-height: 90vh;
-  }
-
   footer {
     padding: 18px 5%;
   }
@@ -641,10 +640,6 @@ footer {
     --h1-font: 4rem;
     --h2-font: 2.2rem;
     --p-font: 15px;
-  }
-
-  section.contact-me {
-    min-height: 90vh;
   }
 }
 
@@ -683,10 +678,6 @@ footer {
   .social {
     margin-bottom: 20px;
   }
-
-  section.contact-me {
-    min-height: 90vh;
-  }
 }
 
 @media (max-width: 1200px) {
@@ -712,6 +703,12 @@ footer {
 
   .slide {
     max-height: 90vh;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 720px) {
+  section.techstack {
     height: fit-content;
   }
 }
@@ -744,10 +741,6 @@ footer {
 
   .project-footer h4 {
     font-size: 18px;
-  }
-
-  section.contact-me {
-    min-height: 90vh;
   }
 
   .slide {
@@ -801,10 +794,6 @@ footer {
 
   .main-content h1 {
     font-size: 38px;
-  }
-
-  section.contact-me {
-    min-height: 90vh;
   }
 }
 
