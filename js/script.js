@@ -99,12 +99,12 @@ const sendMail = (event) => {
     button.innerHTML = successMessage;
   }, 2000);
 
-  setTimeout(async () => {
-    await countDown(5);
+  setTimeout(() => {
+    countDown(5);
   }, 2500);
 };
 
-const countDown = async (time) => {
+const countDown = (time) => {
   setTimeout(() => {
     document.getElementById("submit-btn").innerText = `Reset in ${time}`;
 
