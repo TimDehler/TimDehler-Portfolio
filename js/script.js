@@ -66,7 +66,7 @@ const sendMail = (event) => {
 
   button.innerHTML = loader;
 
-  // const url = "http://localhost:5000/mailService";
+  // const url = "http://161.35.28.184:5000/mailService";
 
   // const headers = new Headers({
   //   "Content-Type": "application/json",
@@ -93,11 +93,12 @@ const sendMail = (event) => {
   //   })
   //   .catch((error) => {
   //     button.innerHTML = "<h1>Error Sending Mail❌</h1>";
+  //     console.log(error);
   //   });
 
   setTimeout(() => {
     button.innerHTML = successMessage;
-  }, 2000);
+  });
 
   setTimeout(() => {
     countDown(5);
