@@ -1,0 +1,44 @@
+.message-animation {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.name-animation {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards 1.5s;
+}
+
+.paragraph-animation {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards 3.5s;
+}
+
+.full-page-fadeIn {
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards 6s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2.5s ease-in-out 0.5s infinite forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}

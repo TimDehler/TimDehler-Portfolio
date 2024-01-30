@@ -62,7 +62,7 @@ span {
 }
 
 .special {
-  text-shadow: 0px 0px 10px var(--main-color);
+  text-shadow: 0px 0px 5px var(--main-color);
 }
 
 .logo {
@@ -124,7 +124,7 @@ span {
 }
 
 .main-content h4 {
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .main-content h1 {
@@ -500,12 +500,13 @@ footer {
 
 .height-container {
   height: 70vh;
+  padding: 0.5rem;
 }
 
 .slider-container {
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   height: 100%;
   width: 100%;

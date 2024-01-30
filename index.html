@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
     <link rel="stylesheet" type="text/css" href="./css/loader.css" />
+    <link rel="stylesheet" type="text/css" href="./css/animation.css" />
     <link rel="icon" href="./assets/favicon/logo.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css"
@@ -26,10 +27,12 @@
   </head>
   <body>
     <header id="navbar">
-      <a href="#about" class="logo"><span class="special">Tim Dehler</span></a>
+      <a href="#about" class="logo"
+        ><span class="special full-page-fadeIn">Tim Dehler</span></a
+      >
       <div class="bx bx-menu" id="menu-icon"></div>
 
-      <ul class="navlist">
+      <ul class="navlist full-page-fadeIn">
         <li class="liElement"><a href="#home">🏠 Home</a></li>
         <li class="liElement"><a href="#about">👤 About me</a></li>
         <li class="liElement"><a href="#experience"> 🌟 Experience</a></li>
@@ -41,22 +44,23 @@
     <main>
       <section class="home" id="home">
         <div class="main-content">
-          <h4>Hi there</h4>
-          <h1>I’m <span>Tim Dehler</span> 🌐</h1>
-          <p>
+          <h4 class="message-animation">Hi there</h4>
+          <h1 class="name-animation">I’m <span>Tim Dehler</span> 🌐</h1>
+          <p class="paragraph-animation">
             a passionate 22-year-old apprentice in Software Development located
             in Fulda, Germany. Aspiring to become a Full Stack Web Developer. I
             am eager to soak up new skills while enhancing the ones already in
             my arsenal.
           </p>
-          <p>
+          <p class="paragraph-animation">
             Join me on this exciting ride as I work on multiple projects that
             not only showcase my evolving skills but also reflect my dedication
             to creating innovative and impactful web solutions. Whether you're
             here to explore my coding endeavors or share insights. I'm happy you
             found your way here!
           </p>
-          <div class="social">
+
+          <div class="social full-page-fadeIn">
             <a target="_blank" href="https://github.com/TimDehler"
               ><i class="ri-github-fill"></i
             ></a>
@@ -117,7 +121,7 @@
 
         <div class="height-container">
           <div class="slider-container" id="slider-container">
-            <button class="btn-main" id="prevBtn"><-</button>
+            <button class="btn-main pulse-animation" id="prevBtn"><-</button>
             <div class="slider">
               <div class="slide active" id="slide1">
                 <h1><span>Mr. Coffee</span> Apprentice Project</h1>
@@ -227,9 +231,8 @@
                   </li>
                 </ul>
               </div>
-              <!-- Add more slides as needed -->
             </div>
-            <button class="btn-main" id="nextBtn">-></button>
+            <button class="btn-main pulse-animation" id="nextBtn">-></button>
           </div>
         </div>
       </section>
